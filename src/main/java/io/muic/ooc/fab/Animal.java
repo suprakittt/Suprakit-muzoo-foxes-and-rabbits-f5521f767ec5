@@ -119,7 +119,7 @@ public abstract class Animal {
     protected abstract int getBreedingAge();
 
     protected Animal createYoung(boolean randomAge, Field field, Location location) {
-        return AnimalFacony.createAnimal(this.getClass(), field, location);
+        return AnimalFactory.createAnimal(this.getClass(), field, location);
     }
 
     /**

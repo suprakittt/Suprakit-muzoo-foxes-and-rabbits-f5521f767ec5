@@ -3,7 +3,7 @@ package io.muic.ooc.fab;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AnimalFacony {
+public class AnimalFactory {
 
     private static Map<AnimalType, Class> animalClassMap = new HashMap<AnimalType, Class>() {{
         AnimalType[] animalTypes = AnimalType.values();
