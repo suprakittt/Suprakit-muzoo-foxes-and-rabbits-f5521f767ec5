@@ -1,16 +1,14 @@
 package io.muic.ooc.fab;
 
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 
-public class Fox extends Animal {
+public class Hunter extends Animal {
 
     // The age at which a fox can start to breed.
-    private static final int BREEDING_AGE = 15;
-    // The age to which a fox can live.
-    private static final int MAX_AGE = 150;
+    private static final int BREEDING_AGE = 20;
     // The likelihood of a fox breeding.
-    private static final double BREEDING_PROBABILITY = 0.05;
+    private static final double BREEDING_PROBABILITY = 0.03;
     // The maximum number of births.
     private static final int MAX_LITTER_SIZE = 2;
     // The food value of a single rabbit. In effect, this is the
@@ -88,13 +86,29 @@ public class Fox extends Animal {
                     return where;
                 }
             }
+            if (animal instanceof Fox) {
+                Fox fox = (Fox) animal;
+                if (fox.isAlive()) {
+                    fox.setDead();
+                    foodLevel = FOX_FOOD_VALUE;
+                    return where;
+                }
+            }
+            if (animal instanceof Tiger) {
+                Tiger tiger = (Tiger) animal;
+                if (tiger.isAlive()) {
+                    tiger.setDead();
+                    foodLevel = TIGER_FOOD_VALUE;
+                    return where;
+                }
+            }
         }
         return null;
     }
 
     @Override
     public int getMaxAge() {
-        return MAX_AGE;
+        return 99999999;
     }
 
     @Override
@@ -109,7 +123,7 @@ public class Fox extends Animal {
 
     @Override
     protected int getBreedingAge() {
-        return BREEDING_AGE;
+        return 30;
     }
 
 }

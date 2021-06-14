@@ -20,6 +20,8 @@ public abstract class Animal {
     protected abstract Location moveToNewLocation();
 
     protected static final int RABBIT_FOOD_VALUE = 9;
+    protected static final int FOX_FOOD_VALUE = 15;
+    protected static final int TIGER_FOOD_VALUE = 20;
 
     public void initialize(boolean randomAge, Field field, Location location){
         this.field = field;
